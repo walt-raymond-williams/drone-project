@@ -23,25 +23,23 @@ This is the lightweight task board for the Drone Project. Keep it current when w
 
 ## Now
 
-- None.
-
-## Next
-
 1. Define first-aircraft requirements.
-   - Status: `Not started`
+   - Status: `In progress`
    - Owner: `Mixed`
    - Goal: Convert the user's goals into requirements and constraints for the first aircraft.
    - Output: `requirements/first-aircraft-requirements.md` and updated roadmap/task state.
-   - Notes: GitHub issue `#1`; active handoff `docs/handoffs/active/define-first-aircraft-requirements.md`; should be the first substantive design task after workflow scaffolding.
+   - Notes: GitHub issue `#1`; active handoff `docs/handoffs/active/define-first-aircraft-requirements.md`; this is the active task to resume if a future session asks what is currently in progress.
 
-2. Establish FAA and field-operation requirements.
+## Next
+
+1. Establish FAA and field-operation requirements.
    - Status: `Not started`
    - Owner: `Mixed`
    - Goal: Create the legal/safety baseline for recreational and future Part 107 operation.
    - Output: `requirements/faa-and-field-operations.md` with dated authoritative sources.
    - Notes: GitHub issue `#2`; active handoff `docs/handoffs/active/establish-faa-field-operation-requirements.md`; must verify current FAA sources before writing.
 
-3. Decide baseline airframe architecture.
+2. Decide baseline airframe architecture.
    - Status: `Not started`
    - Owner: `Mixed`
    - Goal: Choose the initial aircraft configuration class after requirements are clear.

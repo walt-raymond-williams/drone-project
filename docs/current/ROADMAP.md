@@ -38,7 +38,7 @@ Use this shape for entries that may become GitHub issues:
 
 ### Define first-aircraft requirements
 
-- Status: `Issue created`
+- Status: `In progress`
 - Priority: `High`
 - Issue: `#1`
 - Owner: `Mixed`
