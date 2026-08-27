@@ -25,7 +25,7 @@ Use this shape for entries that may become GitHub issues:
 
 ### Establish AI-ready project workflow
 
-- Status: `In progress`
+- Status: `Done`
 - Priority: `High`
 - Issue: `Not created`
 - Owner: `Codex`
@@ -34,18 +34,18 @@ Use this shape for entries that may become GitHub issues:
 - Expected output: `README.md`, `docs/current/` workflow docs, handoff template, issue template, and an initial task board.
 - Handoff notes: Reference the successful patterns from MegaMek workspace and Sunny Town HQ while adapting them for physical aircraft engineering.
 - Dependencies: None.
-- Open questions: Should the initial stable branch be named `main` once git is initialized?
+- Open questions: None. Repository initialized on `main` and pushed to GitHub.
 
 ### Define first-aircraft requirements
 
-- Status: `Ready for issue`
+- Status: `Issue created`
 - Priority: `High`
-- Issue: `Not created`
+- Issue: `#1`
 - Owner: `Mixed`
 - Goal: Turn the user's goals into clear aircraft requirements and constraints.
 - Why it matters: Airframe size, wing loading, payload bay, power system, radio choices, FPV gear, and autopilot choices depend on requirements.
 - Expected output: `requirements/first-aircraft-requirements.md` covering mission, trainer behavior, payload, endurance, portability, repairability, cost target, legal constraints, and open questions.
-- Handoff notes: Start from `AGENTS.md`, `DRONE_PROJECT_PROFILE.md`, and the user's stated goals.
+- Handoff notes: Start from `AGENTS.md`, `DRONE_PROJECT_PROFILE.md`, the user's stated goals, and `docs/handoffs/active/define-first-aircraft-requirements.md`.
 - Dependencies: Initial workflow scaffolding.
 - Open questions: Target budget, preferred build material, expected flying site, transport/storage limits, and desired flight time.
 
@@ -103,14 +103,14 @@ Use this shape for entries that may become GitHub issues:
 
 ### Establish FAA and field-operation requirements
 
-- Status: `Idea`
+- Status: `Issue created`
 - Priority: `High`
-- Issue: `Not created`
+- Issue: `#2`
 - Owner: `Mixed`
 - Goal: Create the project legal/safety operating baseline for recreational flight, TRUST, registration, Remote ID, Part 107 path, visual observer use, airspace checks, and local field rules.
 - Why it matters: The aircraft design and test plan must stay legal and safe.
 - Expected output: `requirements/faa-and-field-operations.md` with dated source links and open questions.
-- Handoff notes: Must use current FAA/authoritative sources when written.
+- Handoff notes: Must use current FAA/authoritative sources when written. Start from `docs/handoffs/active/establish-faa-field-operation-requirements.md`.
 - Dependencies: None.
 - Open questions: Planned flying locations and aircraft weight class.
 
