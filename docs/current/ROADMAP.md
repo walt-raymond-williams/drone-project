@@ -38,16 +38,16 @@ Use this shape for entries that may become GitHub issues:
 
 ### Define first-aircraft requirements
 
-- Status: `In progress`
+- Status: `Done`
 - Priority: `High`
 - Issue: `#1`
 - Owner: `Mixed`
 - Goal: Turn the user's goals into clear aircraft requirements and constraints.
 - Why it matters: Airframe size, wing loading, payload bay, power system, radio choices, FPV gear, and autopilot choices depend on requirements.
 - Expected output: `requirements/first-aircraft-requirements.md` covering mission, trainer behavior, payload, endurance, portability, repairability, cost target, legal constraints, and open questions.
-- Handoff notes: Start from `AGENTS.md`, `DRONE_PROJECT_PROFILE.md`, the user's stated goals, and `docs/handoffs/active/define-first-aircraft-requirements.md`.
+- Handoff notes: Baseline requirements created in `requirements/first-aircraft-requirements.md`; completed handoff archived at `docs/handoffs/archive/define-first-aircraft-requirements.md`.
 - Dependencies: Initial workflow scaffolding.
-- Open questions: Target budget, preferred build material, expected flying site, transport/storage limits, and desired flight time.
+- Open questions: Captured in `requirements/first-aircraft-requirements.md` for follow-up before airframe, power, and purchase decisions.
 
 ### Decide baseline airframe architecture
 

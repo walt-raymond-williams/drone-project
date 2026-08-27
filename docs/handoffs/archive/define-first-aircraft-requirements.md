@@ -84,3 +84,9 @@ git status --short --branch
 - Storage and transport limits.
 - Preferred build material or kit/scratch-build posture.
 - Existing RC transmitter, receiver, goggles, batteries, chargers, or tools.
+
+## Close-Out Notes
+
+- Completed on `2026-08-27`.
+- Baseline requirements created at `requirements/first-aircraft-requirements.md`.
+- Roadmap and task board updated to mark issue `#1` done locally.
