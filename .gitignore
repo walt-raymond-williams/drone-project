@@ -1,0 +1,39 @@
+# OS/editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Logs and scratch output
+*.log
+tmp/
+temp/
+analysis/tmp/
+analysis/generated/
+
+# Python / Node helper environments if added later
+.venv/
+venv/
+__pycache__/
+node_modules/
+dist/
+build/
+
+# Large/generated media and CAD exports should be committed intentionally.
+# Keep source CAD files tracked; avoid committing throwaway exports by default.
+*.stl
+*.3mf
+*.step
+*.stp
+*.iges
+*.igs
+*.obj
+*.gcode
+*.nc
+
+# Flight logs can be large. Commit selected/summarized logs intentionally.
+*.bin
+*.ulg
+*.tlog
+*.rlog
