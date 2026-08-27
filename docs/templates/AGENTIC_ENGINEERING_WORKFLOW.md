@@ -67,7 +67,7 @@ Adapt the domain folders to the project. For a software-only project, folders mi
 
 `docs/handoffs/active/` contains one focused handoff document per active agent-executed issue.
 
-`docs/handoffs/archive/` stores completed handoffs after the work is done.
+`docs/handoffs/archive/` stores completed handoffs after owner review and issue close-out.
 
 `docs/templates/` stores reusable templates for handoffs, decisions, reports, checklists, and this workflow.
 
@@ -244,16 +244,27 @@ For legal, pricing, availability, or external-tool claims, verify from current a
 
 ### 8. Close Out
 
-When the work is done:
+Agent-executed work should stop for human review before final close-out.
+
+Before review, the agent should:
 
 - update the durable docs
+- keep the roadmap entry `In progress`
+- keep the task in `TASKS.md` `Now`
+- keep the handoff in `docs/handoffs/active/`
+- run verification and record any gaps
+- explain what changed, cite files, summarize verification, and ask the human to accept, revise, or reject the work
+
+After explicit human sign-off, the agent may:
+
 - update the roadmap entry to `Done`
 - move the task out of `TASKS.md` `Now`
 - move the handoff from `active/` to `archive/`
-- commit and push the coherent change
+- commit and push the coherent change when approved
 - close or comment on the GitHub Issue with the commit hash and verification result
 
 The close-out should leave the next human or agent with a clear project state.
+Do not close an agent-executed GitHub Issue without explicit human sign-off.
 
 ## Human-Agent Interaction Pattern
 
@@ -292,7 +303,8 @@ Conversation idea
   -> implementation or research
   -> durable documentation
   -> verification
-  -> commit, push, close-out
+  -> human review
+  -> approved commit, push, close-out
 ```
 
 This keeps creative brainstorming separate from executable work.

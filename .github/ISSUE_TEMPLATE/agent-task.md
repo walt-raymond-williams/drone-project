@@ -24,7 +24,13 @@ assignees: ""
 ## Acceptance Criteria
 
 - [ ]
+- [ ] Owner review completed before final close-out
 
 ## Verification
 
 - [ ]
+
+## Owner Review
+
+- [ ] Agent summarized changed files, verification, and open questions
+- [ ] Owner approved final commit/push/close-out
