@@ -84,4 +84,3 @@ git status --short --branch
 - Storage and transport limits.
 - Preferred build material or kit/scratch-build posture.
 - Existing RC transmitter, receiver, goggles, batteries, chargers, or tools.
-

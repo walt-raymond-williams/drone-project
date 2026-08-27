@@ -80,4 +80,3 @@ git status --short --branch
 - Expected aircraft weight class.
 - Whether the first aircraft will need Remote ID at first flight.
 - Whether the user will join or use an AMA/club field.
-
