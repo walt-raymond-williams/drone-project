@@ -1,6 +1,6 @@
 # First-Aircraft Requirements
 
-- Status: `Baseline`
+- Status: `Draft pending owner review`
 - Date: `2026-08-27`
 - Related issue: `#1`
 - Evidence basis: user-stated goals, project profile, roadmap, task board, and current FAA pages checked on `2026-08-27`.

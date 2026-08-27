@@ -76,9 +76,10 @@ Use one handoff document per agent-executed issue when the issue needs focused s
 2. Link the handoff path from the GitHub issue body or comment.
 3. Link the GitHub issue number from the handoff.
 4. Keep durable design, safety, sourcing, and workflow findings in current docs, decisions, requirements, calculations, components, design notes, or tests.
-5. When the issue is complete, move the handoff to `docs/handoffs/archive/`.
-6. Update `ROADMAP.md`, `TASKS.md`, and any affected durable docs before committing close-out.
-7. Push the commit before closing the GitHub issue when a remote exists.
+5. Keep the handoff under `docs/handoffs/active/` while owner review is pending.
+6. After the owner explicitly signs off, move the handoff to `docs/handoffs/archive/`.
+7. Update `ROADMAP.md`, `TASKS.md`, and any affected durable docs before committing close-out.
+8. Push the commit only after owner sign-off.
 
 ## Starting Work On An Issue
 
@@ -164,14 +165,26 @@ Then:
 
 ## Completion
 
-When an issue is done:
+Agent-executed issues require owner review before final push or close.
+
+Before asking for review:
 
 1. Update durable docs with accepted facts, decisions, calculations, test results, or sourcing findings.
-2. Update the roadmap entry to `Done`.
-3. Move or update the task in `TASKS.md`.
-4. Move the handoff from `docs/handoffs/active/` to `docs/handoffs/archive/` if applicable.
+2. Leave the roadmap entry `In progress` until owner sign-off.
+3. Leave the task in `TASKS.md` `Now` with notes that owner review is pending.
+4. Leave the handoff in `docs/handoffs/active/` while owner review is pending.
 5. Run relevant verification or record why it was not applicable.
-6. Commit and push the coherent change.
-7. Close or comment on the GitHub issue with the commit hash and verification results.
+6. Present a concise review summary to the owner, including changed files, key decisions, verification results, and unresolved questions.
+7. Ask the owner whether to accept, revise, or reject the work.
+
+After owner sign-off:
+
+1. Update the roadmap entry to `Done`.
+2. Move or update the task in `TASKS.md`.
+3. Move the handoff from `docs/handoffs/active/` to `docs/handoffs/archive/` if applicable.
+4. Commit the coherent change if it is not already committed.
+5. Push the reviewed commit.
+6. Close or comment on the GitHub issue with the commit hash and verification results.
 
 Do not close a GitHub issue based only on a local commit if a GitHub remote exists. The close-out needs to be visible on GitHub.
+Do not close a GitHub issue without explicit owner sign-off.

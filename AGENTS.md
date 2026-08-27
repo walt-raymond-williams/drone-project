@@ -95,6 +95,9 @@ Do not create large or speculative directory trees before they are useful. Add f
 - Use `docs/current/TASKS.md` as the local Now / Next / Backlog / Blocked / Done board.
 - Use GitHub Issues as executable work units once this folder is initialized as a GitHub repository.
 - When starting a GitHub issue, mark it active in GitHub and in local docs before doing the substantive work: set the issue label to `status:in-progress`, move the task to `TASKS.md` `Now`, mark the roadmap entry `In progress`, commit, and push.
+- Before completing an agent-executed issue, stop for owner review. Explain what changed, cite the files, summarize verification, and ask the owner whether to accept, revise, or reject the work.
+- Do not push final implementation commits, close GitHub issues, move handoffs to archive, or mark roadmap/task entries `Done` until the owner explicitly signs off.
+- If work was already pushed or closed before owner review, reopen or leave the issue open, mark the work as awaiting owner review, and correct the workflow state before proceeding.
 - Keep `TASKS.md` `Now` small; prefer one active task unless two tasks are genuinely parallel.
 - Use one handoff document per agent-executed GitHub issue when focused startup context is needed.
 - For broad multi-issue workstreams, use `codex/` feature integration branches and human review before merging to the stable branch.
