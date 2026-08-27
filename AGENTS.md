@@ -94,6 +94,8 @@ Do not create large or speculative directory trees before they are useful. Add f
 - Use `docs/current/ROADMAP.md` as the durable planning source.
 - Use `docs/current/TASKS.md` as the local Now / Next / Backlog / Blocked / Done board.
 - Use GitHub Issues as executable work units once this folder is initialized as a GitHub repository.
+- When starting a GitHub issue, mark it active in GitHub and in local docs before doing the substantive work: set the issue label to `status:in-progress`, move the task to `TASKS.md` `Now`, mark the roadmap entry `In progress`, commit, and push.
+- Keep `TASKS.md` `Now` small; prefer one active task unless two tasks are genuinely parallel.
 - Use one handoff document per agent-executed GitHub issue when focused startup context is needed.
 - For broad multi-issue workstreams, use `codex/` feature integration branches and human review before merging to the stable branch.
 - When proposing a design change, explain the tradeoff in terms of stability, endurance, repairability, cost, payload, legality, and build complexity.
@@ -119,6 +121,7 @@ When working in this repository:
 
 - Read this file before making project decisions.
 - Read `docs/current/DRONE_PROJECT_PROFILE.md`, `docs/current/ROADMAP.md`, and `docs/current/TASKS.md` before starting significant work.
+- If the user asks for the active task, answer from `docs/current/TASKS.md` `Now` first, then confirm against the matching GitHub issue when practical.
 - Preserve user-written notes and decisions.
 - Do not overwrite design rationale with unexplained changes.
 - Ask for clarification when a choice affects safety, legality, major cost, or irreversible purchases.

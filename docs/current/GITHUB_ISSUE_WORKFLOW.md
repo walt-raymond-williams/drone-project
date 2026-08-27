@@ -80,6 +80,38 @@ Use one handoff document per agent-executed issue when the issue needs focused s
 6. Update `ROADMAP.md`, `TASKS.md`, and any affected durable docs before committing close-out.
 7. Push the commit before closing the GitHub issue when a remote exists.
 
+## Starting Work On An Issue
+
+Before doing substantive work on an issue, synchronize active state across GitHub and local docs.
+
+1. Confirm the working tree is clean or that any existing changes are understood:
+
+```powershell
+git status --short --branch
+```
+
+2. Read the issue, linked handoff, `docs/current/ROADMAP.md`, and `docs/current/TASKS.md`.
+3. Move the task into `TASKS.md` `Now`.
+4. Mark the roadmap entry `Status: In progress`.
+5. Update the GitHub issue labels:
+   - remove `status:ready`
+   - add `status:in-progress`
+6. Comment on the issue with the local recovery state, including the `TASKS.md` and handoff paths.
+7. Commit and push the tracking update before starting the main work.
+
+Recommended commands:
+
+```powershell
+gh issue edit <number> --remove-label "status:ready" --add-label "status:in-progress"
+gh issue comment <number> --body "Started as the active task. Local recovery state is in docs/current/TASKS.md under Now and the handoff is <path>."
+git add docs/current/ROADMAP.md docs/current/TASKS.md
+git diff --cached --check
+git commit -m "Mark <task> active"
+git push
+```
+
+If a future session asks for the active task, inspect `docs/current/TASKS.md` `Now` first and then confirm the matching GitHub issue state when practical.
+
 ## Feature Integration Branches
 
 For broad multi-issue workstreams, use a feature integration branch instead of merging partial work directly into the stable branch.
