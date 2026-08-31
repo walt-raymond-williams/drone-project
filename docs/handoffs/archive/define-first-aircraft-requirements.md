@@ -87,6 +87,7 @@ git status --short --branch
 
 ## Close-Out Notes
 
-- Completed on `2026-08-27`.
+- Accepted by owner on `2026-08-31`.
 - Baseline requirements created at `requirements/first-aircraft-requirements.md`.
 - Roadmap and task board updated to mark issue `#1` done locally.
+- The accepted baseline keeps unresolved budget, flight-time, flying-site, storage, build-material, equipment, payload, and autopilot-timing questions open for follow-up.

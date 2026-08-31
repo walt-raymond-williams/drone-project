@@ -1,7 +1,8 @@
 # First-Aircraft Requirements
 
-- Status: `Draft pending owner review`
+- Status: `Accepted baseline`
 - Date: `2026-08-27`
+- Accepted: `2026-08-31`
 - Related issue: `#1`
 - Evidence basis: user-stated goals, project profile, roadmap, task board, and current FAA pages checked on `2026-08-27`.
 
@@ -25,7 +26,7 @@ This document does not select a final airframe, motor, propeller, battery, fligh
 - `Confirmed by user`: Stability, predictable handling, low cost, easy repair, and long loiter time matter more than speed.
 - `Confirmed by user`: The aircraft should be suitable for beginner learning, including use by the user's son.
 - `Confirmed by user`: The aircraft should leave room for FPV, telemetry, GPS, a Pixhawk-class flight controller, battery monitoring, receiver, and optional Raspberry Pi or Arduino-class companion compute.
-- `Confirmed by user`: The autonomy path should be manual RC first, stabilized/autopilot operation second, and custom integration later only where off-the-shelf tools do not solve the need well.
+- `Confirmed by user`: The aircraft should be planned from the start for autopilot, telemetry, and companion-compute integration, but the preferred early strategy is to prove the airframe manually before risking advanced avionics unless a Pixhawk-class controller is needed for the initial control architecture or integration plan.
 - `Confirmed by user`: FPV should support safe workflows such as spectator goggles while the pilot maintains visual line of sight, or pilot goggles with a competent visual observer where allowed.
 - `Confirmed by user`: The repository should be portfolio-quality and record requirements, tradeoffs, calculations, design artifacts, sourcing, build notes, tests, and lessons learned.
 
@@ -33,7 +34,7 @@ This document does not select a final airframe, motor, propeller, battery, fligh
 
 1. `Requirement`: The baseline mission shall be visual-line-of-sight trainer flight with stable takeoff, climb, loiter, descent, and landing behavior.
 2. `Requirement`: The aircraft shall prioritize efficient loiter and relaxed handling over maximum speed, aerobatic performance, or scale appearance.
-3. `Requirement`: The aircraft shall support staged development: manual flight, stabilized flight, autopilot-assisted flight, telemetry/FPV operation, and later autonomy experiments.
+3. `Requirement`: The aircraft shall support staged development: manual airframe-proving flights, stabilized flight, autopilot-assisted flight, telemetry/FPV operation, and later autonomy experiments.
 4. `Requirement`: The aircraft shall be practical to repair after training incidents, hard landings, and minor crashes.
 5. `Requirement`: The aircraft shall have enough internal or mounted volume for avionics and wiring without forcing unsafe center-of-gravity placement.
 
@@ -43,7 +44,9 @@ This document does not select a final airframe, motor, propeller, battery, fligh
 2. `Requirement`: The initial control setup shall favor conservative throws, expo, and rates appropriate for a trainer.
 3. `Requirement`: The airframe choice shall preserve good low-speed behavior and predictable stall characteristics.
 4. `Requirement`: The aircraft shall be able to fly safely under manual RC control before any autonomy feature is treated as operational.
-5. `Requirement`: Later stabilized or autopilot modes shall not compensate for an airframe that is fundamentally unsuitable as a trainer.
+5. `Requirement`: The first flight configuration should allow the pilot to evaluate the airframe's aerodynamic behavior, trim, stability, stall tendency, and handling before relying on advanced avionics.
+6. `Requirement`: The design shall account for whether a Pixhawk-class flight controller should be part of the initial control path from the start, or whether early flights should use a simpler receiver/servo path with equivalent ballast.
+7. `Requirement`: Later stabilized or autopilot modes shall not compensate for an airframe that is fundamentally unsuitable as a trainer.
 
 ## Payload And Avionics Requirements
 
@@ -51,7 +54,10 @@ This document does not select a final airframe, motor, propeller, battery, fligh
 2. `Requirement`: The design shall preserve a path for optional companion compute such as Raspberry Pi or Arduino-class hardware.
 3. `Requirement`: Avionics placement shall support service access, cooling where needed, reliable antenna placement, and reasonable electromagnetic interference separation.
 4. `Requirement`: The aircraft shall be designed so payload and battery placement can achieve the required center of gravity without temporary or fragile ballast arrangements.
-5. `Requirement`: Payload requirements shall remain as capacity targets until component research supplies real masses, dimensions, power draw, and connector needs.
+5. `Requirement`: The airframe shall include a planned avionics/payload bay or mounting zone sized for the intended autopilot, compute, FPV, telemetry, and wiring stack.
+6. `Requirement`: The avionics/payload bay shall support a removable ballast strategy so early flights can use representative weight and center-of-gravity placement before expensive or crash-sensitive electronics are installed.
+7. `Requirement`: If installed avionics weigh less than the planned representative payload, the design shall allow ballast to remain or be added at the same payload station to preserve center of gravity.
+8. `Requirement`: Payload requirements shall remain as capacity targets until component research supplies real masses, dimensions, power draw, and connector needs.
 
 ## Endurance And Performance Requirements
 
@@ -89,11 +95,14 @@ This document does not select a final airframe, motor, propeller, battery, fligh
 
 ## Autonomy Path Requirements
 
-1. `Requirement`: Manual RC flight shall be proven before relying on stabilized or autonomous flight modes.
-2. `Requirement`: Stabilized and autopilot modes shall be introduced through staged bench, ground, and flight testing.
-3. `Requirement`: Custom software shall be deferred until a clear integration, telemetry, payload, experiment, analysis, or workflow need is identified.
-4. `Requirement`: Any flight-critical software or configuration change shall include a rollback plan and ground-test plan.
-5. `Requirement`: Autonomy experiments shall stay behind documented safety gates, legal constraints, and verified failsafe behavior.
+1. `Requirement`: The aircraft shall be designed from the start to accept the likely autopilot, telemetry, GPS, power-monitoring, and companion-compute stack without major airframe surgery later.
+2. `Requirement`: Manual RC flight should be used to prove the airframe before relying on stabilized or autonomous flight modes as operational capabilities, unless a documented control-architecture decision justifies installing the flight controller from day one.
+3. `Requirement`: The project shall explicitly decide whether the first flight-control architecture routes through a Pixhawk-class flight controller from day one, or whether early flights use a simpler manual RC control path with representative ballast to reduce risk to advanced avionics.
+4. `Requirement`: Expensive or crash-sensitive avionics may be deferred from early flight testing unless they are required to validate the selected control architecture, wiring, failsafe behavior, or integration workflow.
+5. `Requirement`: Stabilized and autopilot modes shall be introduced through staged bench, ground, and flight testing.
+6. `Requirement`: Custom software shall be deferred until a clear integration, telemetry, payload, experiment, analysis, or workflow need is identified.
+7. `Requirement`: Any flight-critical software or configuration change shall include a rollback plan and ground-test plan.
+8. `Requirement`: Autonomy experiments shall stay behind documented safety gates, legal constraints, and verified failsafe behavior.
 
 ## Requirements For Future Decisions
 
@@ -130,7 +139,8 @@ These questions should be resolved before dependent design, purchase, or sizing 
 5. Preferred build approach: foam board, EPO/kit conversion, balsa, 3D-printed parts, or hybrid construction.
 6. Existing RC transmitter, receiver, goggles, batteries, chargers, tools, or other reusable equipment.
 7. Expected rough payload mass for first flight versus later avionics/autonomy payload.
-8. Whether full autopilot hardware is required on the maiden-capable build or can be added after manual trainer flights.
+8. Whether the Pixhawk-class flight controller should be installed and used in the initial control path from the first flight, or represented by ballast until the airframe is proven.
+9. Which avionics are too expensive or crash-sensitive to risk during early manual trainer flights.
 
 ## Follow-Up Tasks
 
